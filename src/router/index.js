@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import BattleView from '../views/BattleView.vue'
+import ShopView from '../views/ShopView.vue'
 
 Vue.use(VueRouter)
 

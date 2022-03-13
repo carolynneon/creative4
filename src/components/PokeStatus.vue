@@ -5,7 +5,7 @@
                 <tr>
                     <td>
                         <div class="status">
-                            <h1>{{this.$root.$data.opponentParty[this.pokemon].name}}</h1>
+                            <h3>{{this.$root.$data.opponentParty[this.pokemon].name}}</h3>
                             <div class="hp-bar">
                                 <div v-bind:style="{width: hpWidth+'%'}" class="hp"></div>
                             </div>
@@ -22,7 +22,7 @@
                     <td style="width: 60%"><img v-bind:src="image"></td>
                     <td>
                         <div class="status">
-                            <h1>{{this.$root.$data.playerParty[this.pokemon].name}}</h1>
+                            <h3>{{this.$root.$data.playerParty[this.pokemon].name}}</h3>
                             <div class="hp-bar">
                                 <div v-bind:style="{width: hpWidth+'%'}" class="hp" />
                             </div>

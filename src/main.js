@@ -2,6 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import matchups from './matchups.js'
+import moves from './moves.js'
+import pokemon from './pokemon.js'
 
 
 let data = {
@@ -12,14 +14,16 @@ let data = {
     {name: "Blue", wins: 32, money: 1400}
   ],
   playerParty: [
-    {name: "Bulbasaur", level: 5, currentHP: 15, maxHP: 15, status:"none"},
+    {name: "BULBASAUR", level: 5, currentHP: 15, maxHP: 15, status:"none"},
     {name: "Charmander", level: 5, currentHP: 15, maxHP: 15, status:"none"},
     {name: "Squirtle", level: 5, currentHP: 0, maxHP: 15, status:"none"}
   ],
   opponentParty: [
-    {name: "Weedle", level: 3, currentHP: 10, maxHP: 10, status:"none"}
+    {name: "WEEDLE", level: 3, currentHP: 10, maxHP: 10, status:"none"}
   ],
-  matchups: matchups
+  matchups: matchups,
+  moves: moves,
+  pokemon: pokemon
   //data goes here
 }
 

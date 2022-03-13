@@ -12,13 +12,14 @@
 
 <style>
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: normal;
 }
 
 #app {
-  font-family: "Garamond", "Times New Roman", serif;
+  font-family: 'pkmn_rbygscregular';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

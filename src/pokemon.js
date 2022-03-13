@@ -1,4 +1,4 @@
-{
+let pokemon = {
 "BULBASAUR":{"img":"bulbasaur","baseHP":45,"type":["GRASS","POISON"],"moves":["TACKLE","GROWL"],"growth":"MEDIUM_SLOW","evolutions":[["EV_LEVEL",16,"IVYSAUR"]],"learnset":[[7,"LEECH_SEED"],[13,"VINE_WHIP"],[20,"POISONPOWDER"],[27,"RAZOR_LEAF"],[34,"GROWTH"],[41,"SLEEP_POWDER"],[48,"SOLARBEAM"]]},
 "IVYSAUR":{"img":"ivysaur","baseHP":60,"type":["GRASS","POISON"],"moves":["TACKLE","GROWL","LEECH_SEED"],"growth":"MEDIUM_SLOW","evolutions":[["EV_LEVEL",32,"VENUSAUR"]],"learnset":[[7,"LEECH_SEED"],[13,"VINE_WHIP"],[22,"POISONPOWDER"],[30,"RAZOR_LEAF"],[38,"GROWTH"],[46,"SLEEP_POWDER"],[54,"SOLARBEAM"]]},
 "VENUSAUR":{"img":"venusaur","baseHP":80,"type":["GRASS","POISON"],"moves":["TACKLE","GROWL","LEECH_SEED","VINE_WHIP"],"growth":"MEDIUM_SLOW","evolutions":[],"learnset":[[7,"LEECH_SEED"],[13,"VINE_WHIP"],[22,"POISONPOWDER"],[30,"RAZOR_LEAF"],[43,"GROWTH"],[55,"SLEEP_POWDER"],[65,"SOLARBEAM"]]},
@@ -39,13 +39,13 @@
 "NINETALES":{"img":"ninetales","baseHP":73,"type":["FIRE","FIRE"],"moves":["EMBER","TAIL_WHIP","QUICK_ATTACK","ROAR"],"growth":"MEDIUM_FAST","evolutions":[],"learnset":[]},
 "JIGGLYPUFF":{"img":"jigglypuff","baseHP":115,"type":["NORMAL","NORMAL"],"moves":["SING"],"growth":"FAST","evolutions":[["EV_ITEM","MOON_STONE",1,"WIGGLYTUFF"]],"learnset":[[9,"POUND"],[14,"DISABLE"],[19,"DEFENSE_CURL"],[24,"DOUBLESLAP"],[29,"REST"],[34,"BODY_SLAM"],[39,"DOUBLE_EDGE"]]},
 "WIGGLYTUFF":{"img":"wigglytuff","baseHP":140,"type":["NORMAL","NORMAL"],"moves":["SING","DISABLE","DEFENSE_CURL","DOUBLESLAP"],"growth":"FAST","evolutions":[],"learnset":[]},
-"ZUBAT":{"img":"zubat","baseHP":40,"type":["POISON","FLYING"],"moves":["LEECH_LIFE"],"growth":"MEDIUM_FAST"},"evolutions":[["EV_LEVEL",22,"GOLBAT"]],"learnset":[[10,"SUPERSONIC"],[15,"BITE"],[21,"CONFUSE_RAY"],[28,"WING_ATTACK"],[36,"HAZE"]]},
+"ZUBAT":{"img":"zubat","baseHP":40,"type":["POISON","FLYING"],"moves":["LEECH_LIFE"],"growth":"MEDIUM_FAST","evolutions":[["EV_LEVEL",22,"GOLBAT"]],"learnset":[[10,"SUPERSONIC"],[15,"BITE"],[21,"CONFUSE_RAY"],[28,"WING_ATTACK"],[36,"HAZE"]]},
 "GOLBAT":{"img":"golbat","baseHP":75,"type":["POISON","FLYING"],"moves":["LEECH_LIFE","SCREECH","BITE"],"growth":"MEDIUM_FAST","evolutions":[],"learnset":[[10,"SUPERSONIC"],[15,"BITE"],[21,"CONFUSE_RAY"],[32,"WING_ATTACK"],[43,"HAZE"]]},
 "ODDISH":{"img":"oddish","baseHP":45,"type":["GRASS","POISON"],"moves":["ABSORB"],"growth":"MEDIUM_SLOW","evolutions":[["EV_LEVEL",21,"GLOOM"]],"learnset":[[15,"POISONPOWDER"],[17,"STUN_SPORE"],[19,"SLEEP_POWDER"],[24,"ACID"],[33,"PETAL_DANCE"],[46,"SOLARBEAM"]]},
 "GLOOM":{"img":"gloom","baseHP":60,"type":["GRASS","POISON"],"moves":["ABSORB","POISONPOWDER","STUN_SPORE"],"growth":"MEDIUM_SLOW","evolutions":[["EV_ITEM","LEAF_STONE",1,"VILEPLUME"]],"learnset":[[15,"POISONPOWDER"],[17,"STUN_SPORE"],[19,"SLEEP_POWDER"],[28,"ACID"],[38,"PETAL_DANCE"],[52,"SOLARBEAM"]]},
 "VILEPLUME":{"img":"vileplume","baseHP":75,"type":["GRASS","POISON"],"moves":["STUN_SPORE","SLEEP_POWDER","ACID","PETAL_DANCE"],"growth":"MEDIUM_SLOW","evolutions":[],"learnset":[[15,"POISONPOWDER"],[17,"STUN_SPORE"],[19,"SLEEP_POWDER"]]},
-"PARAS":{"img":"paras","baseHP":35,"type":["BUG","GRASS"],"moves":["SCRATCH"],"growth":"MEDIUM_FAST"
-"PARASECT":{"img":"parasect","baseHP":60,"type":["BUG","GRASS"],"moves":["SCRATCH","STUN_SPORE","LEECH_LIFE"],"growth":"MEDIUM_FAST","evolutions":[],"learnset":[[13,"STUN_SPORE"],[20,"LEECH_LIFE"],[30,"SPORE"],[39,"SLASH"],[48,"GROWTH"]]},,"evolutions":[["EV_LEVEL",24,"PARASECT"]],"learnset":[[13,"STUN_SPORE"],[20,"LEECH_LIFE"],[27,"SPORE"],[34,"SLASH"],[41,"GROWTH"]]},
+"PARAS":{"img":"paras","baseHP":35,"type":["BUG","GRASS"],"moves":["SCRATCH"],"growth":"MEDIUM_FAST","evolutions":[["EV_LEVEL",24,"PARASECT"]],"learnset":[[13,"STUN_SPORE"],[20,"LEECH_LIFE"],[27,"SPORE"],[34,"SLASH"],[41,"GROWTH"]]},
+"PARASECT":{"img":"parasect","baseHP":60,"type":["BUG","GRASS"],"moves":["SCRATCH","STUN_SPORE","LEECH_LIFE"],"growth":"MEDIUM_FAST","evolutions":[],"learnset":[[13,"STUN_SPORE"],[20,"LEECH_LIFE"],[30,"SPORE"],[39,"SLASH"],[48,"GROWTH"]]},
 "VENONAT":{"img":"venonat","baseHP":60,"type":["BUG","POISON"],"moves":["TACKLE","DISABLE"],"growth":"MEDIUM_FAST","evolutions":[["EV_LEVEL",31,"VENOMOTH"]],"learnset":[[24,"POISONPOWDER"],[27,"LEECH_LIFE"],[30,"STUN_SPORE"],[35,"PSYBEAM"],[38,"SLEEP_POWDER"],[43,"PSYCHIC_M"]]},
 "VENOMOTH":{"img":"venomoth","baseHP":70,"type":["BUG","POISON"],"moves":["TACKLE","DISABLE","POISONPOWDER","LEECH_LIFE"],"growth":"MEDIUM_FAST","evolutions":[],"learnset":[[24,"POISONPOWDER"],[27,"LEECH_LIFE"],[30,"STUN_SPORE"],[38,"PSYBEAM"],[43,"SLEEP_POWDER"],[50,"PSYCHIC_M"]]},
 "DIGLETT":{"img":"diglett","baseHP":10,"type":["GROUND","GROUND"],"moves":["SCRATCH"],"growth":"MEDIUM_FAST","evolutions":[["EV_LEVEL",26,"DUGTRIO"]],"learnset":[[15,"GROWL"],[19,"DIG"],[24,"SAND_ATTACK"],[31,"SLASH"],[40,"EARTHQUAKE"]]},
@@ -69,7 +69,7 @@
 "MACHAMP":{"img":"machamp","baseHP":90,"type":["FIGHTING","FIGHTING"],"moves":["KARATE_CHOP","LOW_KICK","LEER"],"growth":"MEDIUM_SLOW","evolutions":[],"learnset":[[20,"LOW_KICK"],[25,"LEER"],[36,"FOCUS_ENERGY"],[44,"SEISMIC_TOSS"],[52,"SUBMISSION"]]},
 "BELLSPROUT":{"img":"bellsprout","baseHP":50,"type":["GRASS","POISON"],"moves":["VINE_WHIP","GROWTH"],"growth":"MEDIUM_SLOW","evolutions":[["EV_LEVEL",21,"WEEPINBELL"]],"learnset":[[13,"WRAP"],[15,"POISONPOWDER"],[18,"SLEEP_POWDER"],[21,"STUN_SPORE"],[26,"ACID"],[33,"RAZOR_LEAF"],[42,"SLAM"]]},
 "WEEPINBELL":{"img":"weepinbell","baseHP":65,"type":["GRASS","POISON"],"moves":["VINE_WHIP","GROWTH","WRAP"],"growth":"MEDIUM_SLOW","evolutions":[["EV_ITEM","LEAF_STONE",1,"VICTREEBEL"]],"learnset":[[13,"WRAP"],[15,"POISONPOWDER"],[18,"SLEEP_POWDER"],[23,"STUN_SPORE"],[29,"ACID"],[38,"RAZOR_LEAF"],[49,"SLAM"]]},
-"VICTREEBEL":{"img":"victreebel","baseHP":80,"type":["GRASS","POISON"],"moves":["SLEEP_POWDER","STUN_SPORE","ACID","RAZOR_LEAF"],"growth":"MEDIUM_SLOW","evolutions":[],"learnset":[[13,"WRAP"],[15,"POISONPOWDER"],[18,"SLEEP_POWDER"]]}
+"VICTREEBEL":{"img":"victreebel","baseHP":80,"type":["GRASS","POISON"],"moves":["SLEEP_POWDER","STUN_SPORE","ACID","RAZOR_LEAF"],"growth":"MEDIUM_SLOW","evolutions":[],"learnset":[[13,"WRAP"],[15,"POISONPOWDER"],[18,"SLEEP_POWDER"]]},
 "TENTACOOL":{"img":"tentacool","baseHP":40,"type":["WATER","POISON"],"moves":["ACID"],"growth":"SLOW","evolutions":[["EV_LEVEL",30,"TENTACRUEL"]],"learnset":[[7,"SUPERSONIC"],[13,"WRAP"],[18,"POISON_STING"],[22,"WATER_GUN"],[27,"CONSTRICT"],[33,"BARRIER"],[40,"SCREECH"],[48,"HYDRO_PUMP"]]},
 "TENTACRUEL":{"img":"tentacruel","baseHP":80,"type":["WATER","POISON"],"moves":["ACID","SUPERSONIC","WRAP"],"growth":"SLOW","evolutions":[],"learnset":[[7,"SUPERSONIC"],[13,"WRAP"],[18,"POISON_STING"],[22,"WATER_GUN"],[27,"CONSTRICT"],[35,"BARRIER"],[43,"SCREECH"],[50,"HYDRO_PUMP"]]},
 "GEODUDE":{"img":"geodude","baseHP":40,"type":["ROCK","GROUND"],"moves":["TACKLE"],"growth":"MEDIUM_SLOW","evolutions":[["EV_LEVEL",25,"GRAVELER"]],"learnset":[[11,"DEFENSE_CURL"],[16,"ROCK_THROW"],[21,"SELFDESTRUCT"],[26,"HARDEN"],[31,"EARTHQUAKE"],[36,"EXPLOSION"]]},
@@ -150,4 +150,6 @@
 "DRAGONITE":{"img":"dragonite","baseHP":91,"type":["DRAGON","FLYING"],"moves":["WRAP","LEER","THUNDER_WAVE","AGILITY"],"growth":"SLOW","evolutions":[],"learnset":[[10,"THUNDER_WAVE"],[20,"AGILITY"],[35,"SLAM"],[45,"DRAGON_RAGE"],[60,"HYPER_BEAM"]]},
 "MEWTWO":{"img":"mewtwo","baseHP":106,"type":["PSYCHIC","PSYCHIC"],"moves":["CONFUSION","DISABLE","SWIFT","PSYCHIC_M"],"growth":"SLOW","evolutions":[],"learnset":[[63,"BARRIER"],[66,"PSYCHIC_M"],[70,"RECOVER"],[75,"MIST"],[81,"AMNESIA"]]},
 "MEW":{"img":"mew","baseHP":100,"type":["PSYCHIC","PSYCHIC"],"moves":["POUND"],"growth":"MEDIUM_SLOW","evolutions":[],"learnset":[[10,"TRANSFORM"],[20,"MEGA_PUNCH"],[30,"METRONOME"],[40,"PSYCHIC_M"]]}
-}
+};
+
+export default pokemon;

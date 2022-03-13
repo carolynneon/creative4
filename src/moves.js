@@ -1,4 +1,4 @@
-{
+let moves = {
 "POUND":{"effect":"NO_ADDITIONAL_EFFECT","power":40,"type":"NORMAL","accuracy":100,"pp":35},
 "KARATE_CHOP":{"effect":"NO_ADDITIONAL_EFFECT","power":50,"type":"NORMAL","accuracy":100,"pp":25},
 "DOUBLESLAP":{"effect":"TWO_TO_FIVE_ATTACKS_EFFECT","power":15,"type":"NORMAL","accuracy":85,"pp":10},
@@ -164,4 +164,6 @@
 "SLASH":{"effect":"NO_ADDITIONAL_EFFECT","power":70,"type":"NORMAL","accuracy":100,"pp":20},
 "SUBSTITUTE":{"effect":"SUBSTITUTE_EFFECT","power":0,"type":"NORMAL","accuracy":100,"pp":10},
 "STRUGGLE":{"effect":"RECOIL_EFFECT","power":50,"type":"NORMAL","accuracy":100,"pp":10},
-}
+};
+
+export default moves;
