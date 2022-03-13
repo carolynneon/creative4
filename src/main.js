@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-
+import matchups from './matchups.js'
 
 
 let data = {
@@ -18,7 +18,8 @@ let data = {
   ],
   opponentParty: [
     {name: "Weedle", level: 3, currentHP: 10, maxHP: 10, status:"none"}
-  ]
+  ],
+  matchups: matchups
   //data goes here
 }
 

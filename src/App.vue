@@ -1,8 +1,7 @@
 <template>
   <div id="app">
     <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">Leaderboard</router-link>
     </nav>
     <div id="footer">
       <p>Carolynn Chang, Alexis Hovorka - <a href="https://github.com/carolynneon/creative3">Github</a></p>

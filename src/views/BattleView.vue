@@ -4,13 +4,13 @@
       <h1>Whoops! wrong page</h1>
     </div>
     <div v-else-if="state == 'shop'">
-      <h1>The battle is over! head to the shop~</h1>
+      <h1>The battle is over! Click <router-link to="/shop">here</router-link> to go to the shop!</h1>
     </div>
     <div v-else>
       <h1>wow battle time</h1>
       <PokeStatus :pokemon="opponentIndex" :opponent="true" />
       <PokeStatus :pokemon="playerIndex" :opponent="false" />
-      <div class="messages" v-for="message in messages" :key="message.source">
+      <div class="messages" v-for="message in messages" :key="message.message">
         <p>&lt;{{message.source}}&gt;: {{message.message}}</p>
       </div>
       <div class="menu">
@@ -93,9 +93,11 @@ export default {
     async attack(index, event) {
       if (event) event.preventDefault();
       this.menu = "none";
+      let multiplier = 1;
+      if (this.$root.$data.matchups["FIREonGRASS"] != null) multiplier *= this.$root.$data.matchups["FIREonGRASS"];
+      console.log(multiplier);
       //do attack
       await this.newMessage("SYSTEM", this.playerPokemon.name + " used an attack!")
-
       if (this.$root.$data.opponentParty[this.opponentIndex].currentHP < 1) {
         //beat an opponent!
       } else await this.opponentAttack();

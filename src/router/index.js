@@ -15,6 +15,11 @@ const routes = [
     path: '/battle',
     name: 'battle',
     component: BattleView
+  },
+  {
+    path: '/shop',
+    name: 'shop',
+    component: ShopView
   }
 ]
 

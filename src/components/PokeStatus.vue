@@ -12,14 +12,14 @@
                             <p>Lvl {{this.$root.$data.opponentParty[this.pokemon].level}}</p>
                         </div>
                     </td>
-                    <td style="width: 60%"><h1>pokemon front</h1></td>
+                    <td style="width: 60%"><img v-bind:src="image"></td>
                 </tr>
             </table>
         </div>
         <div v-else>
             <table class="playerTable" style="width: 100%">
                 <tr>
-                    <td style="width: 60%"><h1>pokemon back</h1></td>
+                    <td style="width: 60%"><img v-bind:src="image"></td>
                     <td>
                         <div class="status">
                             <h1>{{this.$root.$data.playerParty[this.pokemon].name}}</h1>
@@ -44,7 +44,12 @@ export default {
   },
   computed: {
       hpWidth() {
-          return Math.floor(0.0 + (this.$root.$data.playerParty[this.pokemon].currentHP / this.$root.$data.playerParty[this.pokemon].maxHP) * 100);
+          if (this.opponent) return Math.floor(0.0 + (this.$root.$data.opponentParty[this.pokemon].currentHP / this.$root.$data.opponentParty[this.pokemon].maxHP) * 100);
+          else return Math.floor(0.0 + (this.$root.$data.playerParty[this.pokemon].currentHP / this.$root.$data.playerParty[this.pokemon].maxHP) * 100);
+      },
+      image() {
+          if (this.opponent) return "/images/pokemon/front/" + this.$root.$data.opponentParty[this.pokemon].name.toLowerCase() + ".png";
+          else return  "/images/pokemon/back/" + this.$root.$data.playerParty[this.pokemon].name.toLowerCase() + "b.png";
       }
   }
 }
@@ -56,6 +61,13 @@ export default {
         width: 500px;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    img {
+        width: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        image-rendering: pixelated;
     }
 
     .status {
