@@ -12,6 +12,12 @@
 </template>
 
 <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 #app {
   font-family: "Garamond", "Times New Roman", serif;
   -webkit-font-smoothing: antialiased;
@@ -34,7 +40,6 @@ nav a.router-link-exact-active {
 }
 
 #footer {
-    margin-left: -100px;
     display: block;
     position: fixed;
     bottom: 0px;
