@@ -4,7 +4,7 @@
       <router-link to="/">Leaderboard</router-link>
     </nav>
     <div id="footer">
-      <p>Carolynn Chang, Alexis Hovorka - <a href="https://github.com/carolynneon/creative3">Github</a></p>
+      <p>Carolynn Chang, Alexis Hovorka &mdash; <a href="https://github.com/carolynneon/creative3">Github</a></p>
     </div>
     <router-view/>
   </div>
@@ -16,14 +16,15 @@
   padding: 0;
   box-sizing: border-box;
   font-weight: normal;
+  font-size: 16px;
 }
 
 #app {
-  font-family: 'pkmn_rbygscregular';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "pokemon-font";
+  font-smooth: never;
+  -webkit-font-smoothing: none;
   text-align: center;
-  color: #2c3e50;
+  color: #000;
 }
 
 nav {
@@ -31,22 +32,25 @@ nav {
 }
 
 nav a {
-  font-weight: bold;
-  color: #2c3e50;
+  color: #000;
+  text-decoration: none;
 }
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
+nav a::before { content: "\a0"; }
+nav a:hover::before { content: "\25b6"; }
 
 #footer {
-    display: block;
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
-    height: 38px;
-    padding: 10px;
-    text-align: center;
-    background-color: #F2921D;
+  display: block;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  padding: 8px 0 10px;
+  background: #fff;
+  text-align: center;
+  border-top: 2px solid #000;
+  box-shadow: 0 -1px 0 #fff, 0 -2px 0 #000;
 }
+#footer * { font-size: 8px; }
+#footer a { color: #000; text-decoration: none; }
+#footer a::after { content: "\a0"; }
+#footer a:hover::after { content: "\25b6"; }
 </style>
