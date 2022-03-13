@@ -7,7 +7,7 @@
       <h1>The battle is over! Click <router-link to="/shop">here</router-link> to go to the shop!</h1>
     </div>
     <div v-else>
-      <h1>Pokemon Battle!</h1>
+      <h1>POKéMON BATTLE!</h1>
       <div class="screen-container">
         <PokeStatus :pokemon="opponentIndex" :opponent="true" />
         <PokeStatus :pokemon="playerIndex" :opponent="false" />
@@ -122,7 +122,7 @@ export default {
     margin: 0 auto;
     width: 320px;
     height: 288px;
-    /*box-shadow: 0 0 0 1px #f00;*/
+    box-shadow: 0 0 0 1px #f00;
   }
 
   button {

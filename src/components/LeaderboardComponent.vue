@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div class="leaderboard" v-for="entry in leaderboard" :key="entry.name">
-      <p>{{entry.name}}: {{entry.wins}} wins, ${{entry.money}}</p>
+      <p>{{entry.name}}: {{entry.wins}} wins, ¥{{entry.money}}</p>
     </div>
   </div>
 </template>

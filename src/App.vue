@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+    <h1>
+      <img src="/img/pokemon_logo.png" id="pokemon-logo" alt="Pokémon™">
+      TRAINER BATTLE SIM
+    </h1>
     <nav>
       <router-link to="/">Leaderboard</router-link>
     </nav>
@@ -25,6 +29,14 @@
   -webkit-font-smoothing: none;
   text-align: center;
   color: #000;
+  padding-top: 32px;
+}
+
+#pokemon-logo {
+  display: block;
+  width: 256px;
+  margin: 0 auto;
+  image-rendering: pixelated;
 }
 
 nav {
