@@ -6,7 +6,8 @@
         <td>
           <div class="status">
             <h3>{{pokemon.name}}</h3>
-            <p class="level-line"><img class="level-label" src="/img/level.png" alt="level">{{pokemon.level}}</p>
+            <p v-if="pokemon.status" class="status-line">{{pokemon.status}}</p>
+            <p v-else class="level-line"><img v-if="pokemon.level < 100" class="level-label" src="/img/level.png" alt="level">{{pokemon.level}}</p>
             <div class="hp-box">
               <div class="hp-bar-line">
                 <img class="hp-label" src="/img/hp.png" alt="hp">
@@ -74,9 +75,11 @@ img.level-label { width: 16px; }
 }
 
 .opponent h3, .hp-line { padding-left: 16px; }
-h3, .level-line, .hp-line { height: 16px; }
+h3, .status-line, .level-line, .hp-line { height: 16px; }
 
 .level-line { padding-left: 64px; }
+.status-line { padding-left: 64px; }
+.player .status-line { padding-left: 80px; }
 
 .hp-box {
   border: 4px solid #000;

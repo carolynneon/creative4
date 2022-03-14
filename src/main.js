@@ -15,12 +15,12 @@ new Vue({
       {name: "Blue",  wins: 32, money: 1400}
     ],
     playerParty: [
-      {name: "BULBASAUR",  level: 5, currentHP: 15, maxHP: 15, status:"none"},
-      {name: "Charmander", level: 5, currentHP: 15, maxHP: 15, status:"none"},
-      {name: "Squirtle",   level: 5, currentHP:  0, maxHP: 15, status:"none"}
+      {name: "BULBASAUR",  level: 5, currentHP: 15, maxHP: 15, status:""},
+      {name: "CHARMANDER", level: 5, currentHP: 15, maxHP: 15, status:""},
+      {name: "SQUIRTLE",   level: 5, currentHP:  0, maxHP: 15, status:"PAR"}
     ],
     opponentParty: [
-      {name: "WEEDLE",     level: 3, currentHP: 10, maxHP: 10, status:"none"}
+      {name: "WEEDLE",     level: 3, currentHP: 10, maxHP: 10, status:""}
     ],
 
     matchups, moves, pokemon
