@@ -13,10 +13,12 @@
         <PokeStatus :pokemon="this.playerPokemon" :opponent="false" />
         <div class="menu">
           <div v-if="menu == 'main'">
-            <button v-on:click="setMenu('fight', $event)">FIGHT</button>
-            <button v-on:click="setMenu('item')">ITEM</button>
-            <button v-on:click="setMenu('pokemon', $event)">PKMN</button>
-            <button v-on:click="runAway($event)">RUN</button>
+            <PokeBox>
+              <button v-on:click="setMenu('fight', $event)">FIGHT</button>
+              <button v-on:click="setMenu('item')">ITEM</button>
+              <button v-on:click="setMenu('pokemon', $event)">PKMN</button>
+              <button v-on:click="runAway($event)">RUN</button>
+            </PokeBox>
           </div>
           <div v-else-if="menu == 'fight'">
             <div v-for="move in this.$root.$data.pokemon[playerPokemon.name]['moves']" :key="move">
@@ -43,6 +45,7 @@
 </template>
 
 <script>
+import PokeBox from '@/components/PokeBox.vue'
 import PokeStatus from '@/components/PokeStatus.vue'
 
 export default {
@@ -56,7 +59,7 @@ export default {
     }
   },
   components: {
-    PokeStatus
+    PokeBox, PokeStatus
   },
   computed: {
     state() {

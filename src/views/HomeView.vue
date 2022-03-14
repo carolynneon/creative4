@@ -3,16 +3,21 @@
     <div class="play-button">
       <router-link to="/battle">{{buttonLabel}}</router-link>
     </div>
-    <LeaderboardComponent :leaderboard="leaderboard" />
+    <PokeBox class="center-box">
+      <h2>Leaderboard</h2>
+      <LeaderboardComponent :leaderboard="leaderboard" />
+    </PokeBox>
   </div>
 </template>
 
 <script>
 import LeaderboardComponent from '@/components/LeaderboardComponent.vue'
+import PokeBox from '@/components/PokeBox.vue'
 
 export default {
   name: 'HomeView',
   components: {
+    PokeBox,
     LeaderboardComponent
   },
   computed: {
@@ -34,6 +39,8 @@ export default {
 </script>
 
 <style scoped>
+h2 { padding: 0 16px 8px 0; }
+.center-box { width: 352px; margin: 0 auto; }
 .play-button { margin-bottom: 16px; }
 a { color: #000; text-decoration: none; }
 a::after { content: "\25b7"; }
