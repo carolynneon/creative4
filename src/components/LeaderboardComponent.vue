@@ -13,7 +13,7 @@
 export default {
   name: 'LeaderboardComponent',
   props: {
-    leaderboard: String
+    leaderboard: Array
   },
   computed: {
     sortedLeaderboard() {

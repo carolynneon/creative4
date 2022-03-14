@@ -11,6 +11,7 @@
   background: #fff;
 }
 .box-inner {
+  height: 100%;
   padding: 6px 4px 4px;
   border: 2px solid #000;
   box-shadow:
