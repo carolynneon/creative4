@@ -1,19 +1,23 @@
 <template>
   <div class="home">
-    <div class="playButton">
+    <div class="play-button">
       <router-link to="/battle">{{buttonLabel}}</router-link>
     </div>
-    <LeaderboardComponent :leaderboard="leaderboard" />
+    <PokeBox class="center-box">
+      <h2>Leaderboard</h2>
+      <LeaderboardComponent :leaderboard="leaderboard" />
+    </PokeBox>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
 import LeaderboardComponent from '@/components/LeaderboardComponent.vue'
+import PokeBox from '@/components/PokeBox.vue'
 
 export default {
   name: 'HomeView',
   components: {
+    PokeBox,
     LeaderboardComponent
   },
   computed: {
@@ -33,3 +37,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+h2 { margin-bottom: 8px; }
+.center-box { width: 352px; margin: 0 auto; }
+.play-button { margin-bottom: 16px; }
+a { color: #000; text-decoration: none; }
+a::after { content: "\25b7"; }
+a:hover::after { content: "\25b6"; }
+</style>

@@ -7,7 +7,6 @@
       <h1>The battle hasn't been decided yet! Click <router-link to="/battle">here</router-link> to return to the fight!</h1>
     </div>
     <div v-else>
-        
     </div>
   </div>
 </template>
@@ -18,7 +17,6 @@ export default {
   name: 'ShopView',
   data() {
     return {
-        
     }
   },
   components: {
@@ -28,10 +26,8 @@ export default {
     state() {
       return this.$root.$data.state;
     },
-    
   },
   methods: {
-      
   }
 }
 </script>

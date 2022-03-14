@@ -7,16 +7,18 @@
       <h1>The battle is over! Click <router-link to="/shop">here</router-link> to go to the shop!</h1>
     </div>
     <div v-else>
-      <h1>Pokemon Battle!</h1>
+      <h1>POKéMON BATTLE!</h1>
       <div class="screen-container">
-        <PokeStatus :pokemon="opponentIndex" :opponent="true" />
-        <PokeStatus :pokemon="playerIndex" :opponent="false" />
+        <PokeStatus :pokemon="this.opponentPokemon" :opponent="true" />
+        <PokeStatus :pokemon="this.playerPokemon" :opponent="false" />
         <div class="menu">
           <div v-if="menu == 'main'">
-            <button v-on:click="setMenu('fight', $event)">FIGHT</button>
-            <button v-on:click="setMenu('item')">ITEM</button>
-            <button v-on:click="setMenu('pokemon', $event)">PKMN</button>
-            <button v-on:click="runAway($event)">RUN</button>
+            <PokeBox>
+              <button v-on:click="setMenu('fight', $event)">FIGHT</button>
+              <button v-on:click="setMenu('item')">ITEM</button>
+              <button v-on:click="setMenu('pokemon', $event)">PKMN</button>
+              <button v-on:click="runAway($event)">RUN</button>
+            </PokeBox>
           </div>
           <div v-else-if="menu == 'fight'">
             <div v-for="move in this.$root.$data.pokemon[playerPokemon.name]['moves']" :key="move">
@@ -42,9 +44,8 @@
   </div>
 </template>
 
-
 <script>
-// @ is an alias to /src
+import PokeBox from '@/components/PokeBox.vue'
 import PokeStatus from '@/components/PokeStatus.vue'
 
 export default {
@@ -58,7 +59,7 @@ export default {
     }
   },
   components: {
-    PokeStatus
+    PokeBox, PokeStatus
   },
   computed: {
     state() {
@@ -118,27 +119,27 @@ export default {
 </script>
 
 <style scoped>
-  .screen-container {
-    margin: 0 auto;
-    width: 320px;
-    height: 288px;
-    /*box-shadow: 0 0 0 1px #f00;*/
-  }
+.screen-container {
+  margin: 0 auto;
+  width: 320px;
+  height: 288px;
+  box-shadow: 0 0 0 1px #f00;
+}
 
-  button {
-    font-family: "pokemon-font";
-    border: 0;
-    background: 0;
-    cursor: pointer;
-  }
-  button::before {
-    content: "\a0";
-  }
-  button:hover::before {
-    content: "\25b6";
-  }
+button {
+  font-family: "pokemon-font";
+  border: 0;
+  background: 0;
+  cursor: pointer;
+}
+button::before {
+  content: "\a0";
+}
+button:hover::before {
+  content: "\25b6";
+}
 
-  .messages {
-    padding: 15px;
-  }
+.messages {
+  padding: 15px;
+}
 </style>
