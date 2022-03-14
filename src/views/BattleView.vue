@@ -13,10 +13,10 @@
         <PokeStatus :pokemon="this.playerPokemon" :opponent="false" />
         <div class="menu">
           <div v-if="menu == 'main'">
-            <PokeBox>
+            <PokeBox style="text-align: right; line-height: 16px;">
               <button v-on:click="setMenu('fight', $event)">FIGHT</button>
-              <button v-on:click="setMenu('item')">ITEM</button>
-              <button v-on:click="setMenu('pokemon', $event)">PKMN</button>
+              <button v-on:click="setMenu('pokemon', $event)">PKMN&nbsp;</button><br>
+              <button v-on:click="setMenu('item')">ITEM&nbsp;</button>
               <button v-on:click="runAway($event)">RUN</button>
             </PokeBox>
           </div>
@@ -127,10 +127,13 @@ export default {
 }
 
 button {
+  display: inline-block;
   font-family: "pokemon-font";
   border: 0;
   background: 0;
   cursor: pointer;
+  margin-top: 10px; /* -6px */
+  vertical-align: 3px;
 }
 button::before {
   content: "\a0";
