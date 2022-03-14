@@ -24,12 +24,12 @@
 }
 
 #app {
+  padding-top: 32px;
+  text-align: center;
   font-family: "pokemon-font";
   font-smooth: never;
   -webkit-font-smoothing: none;
-  text-align: center;
   color: #000;
-  padding-top: 32px;
 }
 
 #pokemon-logo {

@@ -8,7 +8,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import LeaderboardComponent from '@/components/LeaderboardComponent.vue'
 
 export default {

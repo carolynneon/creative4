@@ -42,9 +42,7 @@
   </div>
 </template>
 
-
 <script>
-// @ is an alias to /src
 import PokeStatus from '@/components/PokeStatus.vue'
 
 export default {
@@ -118,27 +116,27 @@ export default {
 </script>
 
 <style scoped>
-  .screen-container {
-    margin: 0 auto;
-    width: 320px;
-    height: 288px;
-    box-shadow: 0 0 0 1px #f00;
-  }
+.screen-container {
+  margin: 0 auto;
+  width: 320px;
+  height: 288px;
+  box-shadow: 0 0 0 1px #f00;
+}
 
-  button {
-    font-family: "pokemon-font";
-    border: 0;
-    background: 0;
-    cursor: pointer;
-  }
-  button::before {
-    content: "\a0";
-  }
-  button:hover::before {
-    content: "\25b6";
-  }
+button {
+  font-family: "pokemon-font";
+  border: 0;
+  background: 0;
+  cursor: pointer;
+}
+button::before {
+  content: "\a0";
+}
+button:hover::before {
+  content: "\25b6";
+}
 
-  .messages {
-    padding: 15px;
-  }
+.messages {
+  padding: 15px;
+}
 </style>
