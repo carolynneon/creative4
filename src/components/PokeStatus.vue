@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div v-if="opponent">
-      <table class="opponentTable">
+      <table class="opponent-table">
         <tr>
           <td>
             <div class="status">
@@ -22,7 +22,7 @@
       </table>
     </div>
     <div v-else>
-      <table class="playerTable" style="width: 100%">
+      <table class="player-table" style="width: 100%">
         <tr>
           <td style="width: 60%"><img class="pokemon" v-bind:src="image"></td>
           <td>
@@ -103,8 +103,8 @@ h3, .level-line, .hp-line { height: 16px; }
   width: 138px;
   padding-bottom: 9px;
 }
-.opponentTable .hp-box { border-right: 0; padding-left: 6px; margin-left: 6px; }
-.playerTable .hp-box { border-left: 0; }
+.opponent-table .hp-box { border-right: 0; padding-left: 6px; margin-left: 6px; }
+.player-table .hp-box { border-left: 0; }
 .hp-box::before {
   content: "";
   display: block;
@@ -114,8 +114,8 @@ h3, .level-line, .hp-line { height: 16px; }
   position: absolute;
   bottom: -4px;
 }
-.opponentTable .hp-box::before { left: -4px; }
-.playerTable .hp-box::before { right: -4px; }
+.opponent-table .hp-box::before { left: -4px; }
+.player-table .hp-box::before { right: -4px; }
 
 .hp-label { vertical-align: top; }
 .hp-bar-line {
@@ -134,8 +134,8 @@ h3, .level-line, .hp-line { height: 16px; }
   position: absolute;
   bottom: -4px;
 }
-.opponentTable .hp-box::after { right: -16px; transform: scaleX(-100%); }
-.playerTable .hp-box::after { left: -16px; }
+.opponent-table .hp-box::after { right: -16px; transform: scaleX(-100%); }
+.player-table .hp-box::after { left: -16px; }
 
 .hp-bar {
   display: inline-block;

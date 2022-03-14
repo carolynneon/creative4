@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="playButton">
+    <div class="play-button">
       <router-link to="/battle">{{buttonLabel}}</router-link>
     </div>
     <LeaderboardComponent :leaderboard="leaderboard" />
@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style scoped>
-.playButton { margin-bottom: 16px; }
+.play-button { margin-bottom: 16px; }
 a { color: #000; text-decoration: none; }
 a::after { content: "\25b7"; }
 a:hover::after { content: "\25b6"; }
