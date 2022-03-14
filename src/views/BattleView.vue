@@ -9,8 +9,8 @@
     <div v-else>
       <h1>POKéMON BATTLE!</h1>
       <div class="screen-container">
-        <PokeStatus :pokemon="opponentIndex" :opponent="true" />
-        <PokeStatus :pokemon="playerIndex" :opponent="false" />
+        <PokeStatus :pokemon="this.opponentPokemon" :opponent="true" />
+        <PokeStatus :pokemon="this.playerPokemon" :opponent="false" />
         <div class="menu">
           <div v-if="menu == 'main'">
             <button v-on:click="setMenu('fight', $event)">FIGHT</button>

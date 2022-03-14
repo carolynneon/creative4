@@ -1,48 +1,26 @@
 <template>
-  <div class="content">
-    <div v-if="opponent">
-      <table class="opponent-table">
-        <tr>
-          <td>
-            <div class="status">
-              <h3>{{this.$root.$data.opponentParty[this.pokemon].name}}</h3>
-              <p class="level-line"><img class="level-label" src="/img/level.png" alt="level">{{this.$root.$data.opponentParty[this.pokemon].level}}</p>
-              <div class="hp-box">
-                <div class="hp-bar-line">
-                  <img class="hp-label" src="/img/hp.png" alt="hp">
-                  <div class="hp-bar">
-                    <div v-bind:style="{width: hpWidth+'px'}" class="hp"></div>
-                  </div>
+  <div :class="'content '+(opponent?'opponent':'player')">
+    <table>
+      <tr>
+        <td v-if="!opponent" style="width: 60%"><img class="pokemon" :src="image"></td>
+        <td>
+          <div class="status">
+            <h3>{{pokemon.name}}</h3>
+            <p class="level-line"><img class="level-label" src="/img/level.png" alt="level">{{pokemon.level}}</p>
+            <div class="hp-box">
+              <div class="hp-bar-line">
+                <img class="hp-label" src="/img/hp.png" alt="hp">
+                <div class="hp-bar">
+                  <div :style="{width: hpWidth+'px'}" class="hp" />
                 </div>
               </div>
+              <p v-if="!opponent" class="hp-line">{{hpString}}</p>
             </div>
-          </td>
-          <td style="width: 60%"><img class="pokemon" v-bind:src="image"></td>
-        </tr>
-      </table>
-    </div>
-    <div v-else>
-      <table class="player-table" style="width: 100%">
-        <tr>
-          <td style="width: 60%"><img class="pokemon" v-bind:src="image"></td>
-          <td>
-            <div class="status">
-              <h3>{{this.$root.$data.playerParty[this.pokemon].name}}</h3>
-              <p class="level-line"><img class="level-label" src="/img/level.png" alt="level">{{this.$root.$data.playerParty[this.pokemon].level}}</p>
-              <div class="hp-box">
-                <div class="hp-bar-line">
-                  <img class="hp-label" src="/img/hp.png" alt="hp">
-                  <div class="hp-bar">
-                    <div v-bind:style="{width: hpWidth+'px'}" class="hp" />
-                  </div>
-                </div>
-                <p class="hp-line">&nbsp;&nbsp;{{this.$root.$data.playerParty[this.pokemon].currentHP}}/ {{this.$root.$data.playerParty[this.pokemon].maxHP}}</p>
-              </div>
-            </div>
-          </td>
-        </tr>
-      </table>
-    </div>
+          </div>
+        </td>
+        <td v-if="opponent" style="width: 60%"><img class="pokemon" :src="image"></td>
+      </tr>
+    </table>
   </div>
 </template>
 
@@ -50,17 +28,21 @@
 export default {
   name: "PokeStatus",
   props: {
-    pokemon: Number,
+    pokemon: Object,
     opponent: Boolean
   },
   computed: {
     hpWidth() {
-      const pokemon = this.$root.$data[this.opponent?"opponentParty":"playerParty"][this.pokemon];
-      return Math.floor((pokemon.currentHP / pokemon.maxHP) * 96);
+      return Math.floor((this.pokemon.currentHP / this.pokemon.maxHP) * 96);
+    },
+    hpString() {
+      return [this.pokemon.currentHP, this.pokemon.maxHP]
+        .map(n => (n+"").padStart(3,"\xA0")).join("/");
     },
     image() {
-      if (this.opponent) return "/img/pokemon/front/" + this.$root.$data.opponentParty[this.pokemon].name.toLowerCase() + ".png";
-      else return  "/img/pokemon/back/" + this.$root.$data.playerParty[this.pokemon].name.toLowerCase() + "b.png";
+      let image = this.pokemon.name.toLowerCase();
+      image = this.opponent? "front/"+image : `back/${image}b`;
+      return `/img/pokemon/${image}.png`;
     }
   }
 }
@@ -91,7 +73,7 @@ img.level-label { width: 16px; }
   text-align: left;
 }
 
-.opponentTable h3 { padding-left: 16px; }
+.opponent h3, .hp-line { padding-left: 16px; }
 h3, .level-line, .hp-line { height: 16px; }
 
 .level-line { padding-left: 64px; }
@@ -103,8 +85,8 @@ h3, .level-line, .hp-line { height: 16px; }
   width: 138px;
   padding-bottom: 9px;
 }
-.opponent-table .hp-box { border-right: 0; padding-left: 6px; margin-left: 6px; }
-.player-table .hp-box { border-left: 0; }
+.opponent .hp-box { border-right: 0; padding-left: 6px; margin-left: 6px; }
+.player .hp-box { border-left: 0; }
 .hp-box::before {
   content: "";
   display: block;
@@ -114,8 +96,8 @@ h3, .level-line, .hp-line { height: 16px; }
   position: absolute;
   bottom: -4px;
 }
-.opponent-table .hp-box::before { left: -4px; }
-.player-table .hp-box::before { right: -4px; }
+.opponent .hp-box::before { left: -4px; }
+.player .hp-box::before { right: -4px; }
 
 .hp-label { vertical-align: top; }
 .hp-bar-line {
@@ -134,8 +116,8 @@ h3, .level-line, .hp-line { height: 16px; }
   position: absolute;
   bottom: -4px;
 }
-.opponent-table .hp-box::after { right: -16px; transform: scaleX(-100%); }
-.player-table .hp-box::after { left: -16px; }
+.opponent .hp-box::after { right: -16px; transform: scaleX(-100%); }
+.player .hp-box::after { left: -16px; }
 
 .hp-bar {
   display: inline-block;
