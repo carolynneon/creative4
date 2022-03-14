@@ -39,7 +39,7 @@ export default {
 </script>
 
 <style scoped>
-h2 { padding: 0 16px 8px 0; }
+h2 { margin-bottom: 8px; }
 .center-box { width: 352px; margin: 0 auto; }
 .play-button { margin-bottom: 16px; }
 a { color: #000; text-decoration: none; }
