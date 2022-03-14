@@ -32,3 +32,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.playButton { margin-bottom: 16px; }
+a { color: #000; text-decoration: none; }
+a::after { content: "\25b7"; }
+a:hover::after { content: "\25b6"; }
+</style>
