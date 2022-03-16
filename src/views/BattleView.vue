@@ -11,33 +11,42 @@
       <div class="screen-container">
         <PokeStatus :pokemon="this.opponentPokemon" :opponent="true" />
         <PokeStatus :pokemon="this.playerPokemon" :opponent="false" />
+        <PokeBox class="messages">
+          <p v-for="message in messages" :key="message.message">&lt;{{message.source}}&gt;: {{message.message}}</p>
+        </PokeBox>
         <div class="menu">
-          <div v-if="menu == 'main'">
-            <PokeBox>
-              <button v-on:click="setMenu('fight', $event)">FIGHT</button>
-              <button v-on:click="setMenu('item')">ITEM</button>
-              <button v-on:click="setMenu('pokemon', $event)">PKMN</button>
-              <button v-on:click="runAway($event)">RUN</button>
+          <PokeBox v-if="menu == 'main'" class="menu-main">
+            <button v-on:click="setMenu('fight', $event)">FIGHT</button>
+            <button v-on:click="setMenu('pokemon', $event)">PKMN&nbsp;</button><br>
+            <button v-on:click="setMenu('item')">ITEM&nbsp;</button>
+            <button v-on:click="runAway($event)">RUN</button>
+          </PokeBox>
+          <div v-else-if="menu == 'fight'">
+            <PokeBox class="menu-moves">
+              <div class="move-line" v-for="move in this.$root.$data.pokemon[playerPokemon.name]['moves']" :key="move">
+                <button v-on:click="attack(move, $event)">{{move}}</button>
+                <PokeBox class="move-stats">
+                  <div class="move-stats-label">TYPE/</div>
+                  <div class="move-stats-type">!!TODO!!</div>
+                  <div class="move-stats-pp">35/35</div>
+                </PokeBox>
+              </div>
+              <div v-for="index in (4 - this.$root.$data.pokemon[playerPokemon.name]['moves'].length)"
+                :key="index" class="move-blank">&ndash;</div>
+              <!--button v-on:click="setMenu('main', $event)">&ndash;</button--><!-- TODO click off menu should be back instead-->
             </PokeBox>
           </div>
-          <div v-else-if="menu == 'fight'">
-            <div v-for="move in this.$root.$data.pokemon[playerPokemon.name]['moves']" :key="move">
-              <button v-on:click="attack(move, $event)">{{move}}</button>
+          <PokeBox v-else-if="menu == 'item'" class="menu-items">
+            <div class="menu-items-scroll">
+              <button v-on:click="setMenu('main', $event)">CANCEL</button>
             </div>
-            <button v-on:click="setMenu('main', $event)">BACK</button>
-          </div>
-          <div v-else-if="menu == 'item'">
-            <button v-on:click="setMenu('main', $event)">BACK</button>
-          </div>
-          <div v-else-if="menu == 'pokemon'">
+          </PokeBox>
+          <PokeBox v-else-if="menu == 'pokemon'">
             <div v-for="pokemon in playerParty" :key="pokemon.name">
               <button v-bind:disabled="pokemon.currentHP < 1 || pokemon.name == playerParty[playerIndex].name" v-on:click="switchPokemon('pokemon.name', $event)">{{pokemon.name}}</button>
             </div>
             <button v-on:click="setMenu('main', $event)">BACK</button>
-          </div>
-        </div>
-        <div class="messages">
-          <p v-for="message in messages" :key="message.message">&lt;{{message.source}}&gt;: {{message.message}}</p>
+          </PokeBox>
         </div>
       </div>
     </div>
@@ -120,6 +129,7 @@ export default {
 
 <style scoped>
 .screen-container {
+  position: relative;
   margin: 0 auto;
   width: 320px;
   height: 288px;
@@ -127,10 +137,13 @@ export default {
 }
 
 button {
+  display: block;
   font-family: "pokemon-font";
   border: 0;
   background: 0;
   cursor: pointer;
+  margin-top: -6px;
+  vertical-align: 3px;
 }
 button::before {
   content: "\a0";
@@ -140,6 +153,61 @@ button:hover::before {
 }
 
 .messages {
-  padding: 15px;
+  width: 320px;
+  height: 96px;
+  position: absolute;
+}
+
+.menu-main {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-align: right;
+  line-height: 16px;
+}
+.menu-main button {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.menu-moves {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 96px;
+  width: 256px;
+}
+.move-blank {
+  text-align: left;
+  height: 16px;
+  line-height: 16px;
+  margin: -3px 0 3px;
+  padding-left: 16px;
+}
+.move-stats {
+  display: none;
+  position: absolute;
+  top: -64px;
+  left: -64px;
+  width: 176px;
+  line-height: 16px;
+  text-align: left;
+}
+.move-line button:hover ~ .move-stats {
+  display: block;
+}
+.move-stats div { margin: -3px 0 3px; }
+.move-stats-type { padding-left: 16px; }
+.move-stats-pp { text-align: right; }
+
+.menu-items {
+  position: absolute;
+  top: 32px;
+  right: 0;
+  height: 176px;
+  width: 256px;
+}
+.menu-items-scroll {
+  padding: 16px 0;
 }
 </style>
