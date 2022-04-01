@@ -5,6 +5,8 @@ import matchups from './matchups.js'
 import moves from './moves.js'
 import pokemon from './pokemon.js'
 
+// statuses = ["PAR","BRN","FRZ","PSN","SLP","FNT"]
+
 new Vue({
   router,
   data: {
@@ -17,7 +19,7 @@ new Vue({
     playerParty: [
       {name: "BULBASAUR",  level: 5, currentHP: 15, maxHP: 15, status:""},
       {name: "CHARMANDER", level: 5, currentHP: 15, maxHP: 15, status:""},
-      {name: "SQUIRTLE",   level: 5, currentHP:  0, maxHP: 15, status:"PAR"}
+      {name: "SQUIRTLE",   level: 5, currentHP:  0, maxHP: 15, status:"FNT"}
     ],
     opponentParty: [
       {name: "WEEDLE",     level: 3, currentHP: 10, maxHP: 10, status:""}
