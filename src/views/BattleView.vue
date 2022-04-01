@@ -7,7 +7,7 @@
       <h1>The battle is over! Click <router-link to="/shop">here</router-link> to go to the shop!</h1>
     </div>
     <div v-else>
-      <h1>POKéMON BATTLE!</h1>
+      <h1>&nbsp;POKéMON BATTLE!</h1>
       <div class="screen-container">
         <TrainerStatus v-if="this.$root.$data.opponentMode == 'trainer'" trainer="YOUNGSTER" :party="this.opponentParty" :opponent="true" />
         <PokeStatus v-else :pokemon="opponentPokemon" :opponent="true" />
@@ -39,7 +39,8 @@
             </PokeBox>
           </div>
           <PokeBox v-else-if="menu == 'item'" class="menu-items">
-            <div class="menu-items-scroll">
+            <div :class="'menu-items-scroll '+(this.$root.$data.inventory.length > 3? 'moreable':'')" v-on:scroll="scrollItems($event)">
+              <button v-for="item in this.$root.$data.inventory" :key="item">{{item.type}}<div v-if="item.qty" class="item-qty">&times; {{item.qty}}</div></button>
               <button v-on:click="setMenu('main', $event)">CANCEL</button>
             </div>
           </PokeBox>
@@ -128,6 +129,13 @@ export default {
     async switchPokemon(pokemon, event) {
       if (event) event.preventDefault();
 
+    },
+    scrollItems(event) {
+      if (event.target.offsetHeight+event.target.scrollTop >= event.target.scrollHeight) {
+        event.target.classList.add("at-bottom");
+      } else {
+        event.target.classList.remove("at-bottom");
+      }
     }
   }
 }
@@ -214,6 +222,38 @@ button:hover::before {
   width: 256px;
 }
 .menu-items-scroll {
-  padding: 16px 0;
+  padding: 16px 0 0;
+  height: 100%;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.menu-items-scroll::-webkit-scrollbar {
+  display: none;
+}
+.menu-items button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding-bottom: 16px;
+}
+.item-qty {
+  margin: -3px 0 -13px 144px;
+  line-height: 16px;
+}
+
+.menu-items-scroll.moreable:not(.at-bottom)::after {
+  content: "\25b6";
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  line-height: 9px;
+  transform: rotate(90deg);
+  animation: arrow-blink 2s steps(2, start) infinite;
+}
+@keyframes arrow-blink {
+  to { visibility: hidden; }
 }
 </style>
