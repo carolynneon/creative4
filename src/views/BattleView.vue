@@ -9,8 +9,10 @@
     <div v-else>
       <h1>POKéMON BATTLE!</h1>
       <div class="screen-container">
-        <PokeStatus :pokemon="this.opponentPokemon" :opponent="true" />
-        <PokeStatus :pokemon="this.playerPokemon" :opponent="false" />
+        <TrainerStatus v-if="opponentMode == 'trainer'" trainer="YOUNGSTER" :party="this.opponentParty" :opponent="true" />
+        <PokeStatus v-else :pokemon="opponentPokemon" :opponent="true" />
+        <TrainerStatus v-if="playerMode == 'trainer'" trainer="" :party="this.playerParty" :opponent="false" />
+        <PokeStatus v-else :pokemon="playerPokemon" :opponent="false" />
         <PokeBox class="messages">
           <p v-for="message in messages" :key="message.message">&lt;{{message.source}}&gt;: {{message.message}}</p>
         </PokeBox>
@@ -56,6 +58,7 @@
 <script>
 import PokeBox from '@/components/PokeBox.vue'
 import PokeStatus from '@/components/PokeStatus.vue'
+import TrainerStatus from '@/components/TrainerStatus.vue'
 
 export default {
   name: 'BattleView',
@@ -68,7 +71,7 @@ export default {
     }
   },
   components: {
-    PokeBox, PokeStatus
+    PokeBox, PokeStatus, TrainerStatus
   },
   computed: {
     state() {
@@ -80,8 +83,17 @@ export default {
     playerPokemon() {
       return this.$root.$data.playerParty[this.playerIndex];
     },
+    opponentParty() {
+      return this.$root.$data.opponentParty;
+    },
     opponentPokemon() {
       return this.$root.$data.opponentParty[this.opponentIndex];
+    },
+    opponentMode() {
+      return "pokemon"; // "trainer"
+    },
+    playerMode() {
+      return "pokemon"; // "trainer"
     }
   },
   methods: {
