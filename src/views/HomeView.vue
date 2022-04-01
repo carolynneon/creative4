@@ -13,12 +13,16 @@
 <script>
 import LeaderboardComponent from '@/components/LeaderboardComponent.vue'
 import PokeBox from '@/components/PokeBox.vue'
+import axios from 'axios';
 
 export default {
   name: 'HomeView',
   components: {
     PokeBox,
     LeaderboardComponent
+  },
+  created() {
+    this.getTrainers();
   },
   computed: {
     buttonLabel() {
@@ -32,8 +36,16 @@ export default {
   methods: {
     playButton(event) {
       if (event) event.preventDefault();
-
-    }
+    },
+    async getTrainers() {
+      try {
+        let response = await axios.get("/api/trainers");
+        this.$root.$data.leaderboard = response.data;
+        return true;
+      } catch (error) {
+        console.log(error);
+      }
+    },
   }
 }
 </script>
