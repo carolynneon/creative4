@@ -53,6 +53,7 @@ nav a:hover::before { content: "\25b6"; }
 #footer {
   display: block;
   position: fixed;
+  z-index: 1;
   bottom: 0px;
   width: 100%;
   padding: 8px 0 10px;

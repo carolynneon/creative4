@@ -2,8 +2,8 @@
   <div class="content">
     <table>
       <tr><th>NAME</th><th>WINS</th><th>MONEY</th></tr>
-      <tr class="leaderboard" v-for="entry in sortedLeaderboard" :key="entry.name">
-        <td>{{entry.name}}</td><td>{{entry.battles}}</td><td>¥{{entry.money}}</td>
+      <tr class="leaderboard" v-for="trainer in sortedLeaderboard" :key="trainer.name">
+        <td>{{trainer.name}}</td><td>{{trainer.battles}}</td><td>¥{{trainer.money}}</td>
       </tr>
     </table>
   </div>

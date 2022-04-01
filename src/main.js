@@ -10,6 +10,7 @@ import pokemon from './pokemon.js'
 new Vue({
   router,
   data: {
+    playerData: {name: "Yellow", battles: 0, money: 200},
     state: "battle",
     leaderboard: [
       {name: "Red",   battles: 32, money: 1500},

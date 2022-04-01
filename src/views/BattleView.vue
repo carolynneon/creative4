@@ -137,6 +137,7 @@ export default {
 .screen-container {
   position: relative;
   margin: 0 auto;
+  margin-bottom: 48px;
   width: 320px;
   height: 288px;
   box-shadow: 0 0 0 1px #f00;
