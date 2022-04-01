@@ -16,11 +16,13 @@ new Vue({
       {name: "Green", wins: 31, money: 9900},
       {name: "Blue",  wins: 32, money: 1400}
     ],
+    playerMode: "pokemon", // "trainer"
     playerParty: [
       {name: "BULBASAUR",  level: 5, currentHP: 15, maxHP: 15, status:""},
       {name: "CHARMANDER", level: 5, currentHP: 15, maxHP: 15, status:""},
       {name: "SQUIRTLE",   level: 5, currentHP:  0, maxHP: 15, status:"FNT"}
     ],
+    opponentMode: "pokemon", // "trainer"
     opponentParty: [
       {name: "WEEDLE",     level: 3, currentHP: 10, maxHP: 10, status:""}
     ],

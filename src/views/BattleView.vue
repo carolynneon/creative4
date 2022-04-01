@@ -9,9 +9,9 @@
     <div v-else>
       <h1>POKéMON BATTLE!</h1>
       <div class="screen-container">
-        <TrainerStatus v-if="opponentMode == 'trainer'" trainer="YOUNGSTER" :party="this.opponentParty" :opponent="true" />
+        <TrainerStatus v-if="this.$root.$data.opponentMode == 'trainer'" trainer="YOUNGSTER" :party="this.opponentParty" :opponent="true" />
         <PokeStatus v-else :pokemon="opponentPokemon" :opponent="true" />
-        <TrainerStatus v-if="playerMode == 'trainer'" trainer="" :party="this.playerParty" :opponent="false" />
+        <TrainerStatus v-if="this.$root.$data.playerMode == 'trainer'" trainer="" :party="this.playerParty" :opponent="false" />
         <PokeStatus v-else :pokemon="playerPokemon" :opponent="false" />
         <PokeBox class="messages">
           <p v-for="message in messages" :key="message.message">&lt;{{message.source}}&gt;: {{message.message}}</p>
@@ -88,12 +88,6 @@ export default {
     },
     opponentPokemon() {
       return this.$root.$data.opponentParty[this.opponentIndex];
-    },
-    opponentMode() {
-      return "pokemon"; // "trainer"
-    },
-    playerMode() {
-      return "pokemon"; // "trainer"
     }
   },
   methods: {
