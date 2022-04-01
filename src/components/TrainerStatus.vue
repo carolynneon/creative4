@@ -75,7 +75,7 @@ img {
   margin-top: 32px;
 }
 .opponent .party-box { border-right: 0; padding-left: 22px; margin-left: 22px; }
-.player .party-box { border-left: 0; padding-left: 16px; margin-top: 50px; }
+.player .party-box { border-left: 0; padding-left: 16px; margin-top: 48px; }
 .party-box::before {
   content: "";
   display: block;
