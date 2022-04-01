@@ -70,12 +70,12 @@ img {
   border-top: 0;
   position: relative;
   width: 138px;
-  height: 24px;
+  height: 26px;
   padding-bottom: 9px;
   margin-top: 32px;
 }
 .opponent .party-box { border-right: 0; padding-left: 22px; margin-left: 22px; }
-.player .party-box { border-left: 0; padding-left: 16px; margin-top: 48px; }
+.player .party-box { border-left: 0; padding-left: 16px; margin-top: 50px; }
 .party-box::before {
   content: "";
   display: block;
@@ -105,8 +105,8 @@ img {
 .party-ball {
   height: 16px;
   width: 16px;
-  display: inline-block;
   margin: -1px 0 1px;
+  display: inline-block;
   background-image: url("~@/assets/ball-icons.png");
   background-size: 64px;
   image-rendering: pixelated;
