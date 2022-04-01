@@ -243,14 +243,13 @@ button:hover::before {
 }
 
 .menu-items-scroll.moreable:not(.at-bottom)::after {
-  content: "\25b6";
+  content: "\25bc";
   height: 16px;
   width: 16px;
   position: absolute;
   bottom: 16px;
   right: 16px;
-  line-height: 9px;
-  transform: rotate(90deg);
+  line-height: 10px;
   animation: arrow-blink 2s steps(2, start) infinite;
 }
 @keyframes arrow-blink {
