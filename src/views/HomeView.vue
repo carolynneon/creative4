@@ -45,7 +45,6 @@ export default {
       return (this.$root.$data.state == "none") ? "New Game" : "Resume Game";
     },
     leaderboard() {
-      //let compareFn = (a, b) => {return (a.wins == b.wins) ? b.money - a.money : b.wins - a.wins;};
       return this.$root.$data.leaderboard;
     }
   },

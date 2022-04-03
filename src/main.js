@@ -27,6 +27,12 @@ new Vue({
     opponentParty: [
       {name: "WEEDLE",     level: 3, currentHP: 10, maxHP: 10, status:""}
     ],
+    inventory: [
+      {type: "TOWN MAP"},
+      {type: "POTION", qty: 1},
+      {type: "SUPER POTION", qty: 1},
+      {type: "HYPER POTION", qty: 1}
+    ],
 
     matchups, moves, pokemon
   },
