@@ -8,7 +8,7 @@
       <router-link to="/">Leaderboard</router-link>
     </nav>
     <div id="footer">
-      <p>Carolynn Chang, Alexis Hovorka &mdash; <a href="https://github.com/alexisspacegirl/creative4">Github</a></p>
+      <p>Carolynn Chang, Alexis Hovorka &mdash; <a href="https://github.com/carolynneon/creative4">Github</a></p>
     </div>
     <router-view/>
   </div>
@@ -53,6 +53,7 @@ nav a:hover::before { content: "\25b6"; }
 #footer {
   display: block;
   position: fixed;
+  z-index: 1;
   bottom: 0px;
   width: 100%;
   padding: 8px 0 10px;

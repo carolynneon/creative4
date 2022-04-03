@@ -10,11 +10,12 @@ import pokemon from './pokemon.js'
 new Vue({
   router,
   data: {
+    playerData: {name: "Yellow", battles: 0, money: 200},
     state: "battle",
     leaderboard: [
-      {name: "Red",   wins: 32, money: 1500},
-      {name: "Green", wins: 31, money: 9900},
-      {name: "Blue",  wins: 32, money: 1400}
+      {name: "Red",   battles: 32, money: 1500},
+      {name: "Green", battles: 31, money: 9900},
+      {name: "Blue",  battles: 32, money: 1400}
     ],
     playerMode: "pokemon", // "trainer"
     playerParty: [

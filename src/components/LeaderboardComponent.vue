@@ -2,8 +2,8 @@
   <div class="content">
     <table>
       <tr><th>NAME</th><th>WINS</th><th>MONEY</th></tr>
-      <tr class="leaderboard" v-for="entry in sortedLeaderboard" :key="entry.name">
-        <td>{{entry.name}}</td><td>{{entry.wins}}</td><td>¥{{entry.money}}</td>
+      <tr class="leaderboard" v-for="trainer in sortedLeaderboard" :key="trainer.name">
+        <td>{{trainer.name}}</td><td>{{trainer.battles}}</td><td>¥{{trainer.money}}</td>
       </tr>
     </table>
   </div>
@@ -18,7 +18,7 @@ export default {
   computed: {
     sortedLeaderboard() {
       return this.leaderboard.slice().sort((a,b) =>
-        (b.wins - a.wins) || (b.money - a.money));
+        (b.battles - a.battles) || (b.money - a.money)).slice(0, Math.min(this.leaderboard.length, 10));
     }
   }
 }

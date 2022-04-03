@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import BattleView from '../views/BattleView.vue'
 import ShopView from '../views/ShopView.vue'
+import AdminView from '../views/AdminView.vue'
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/shop',
     name: 'shop',
     component: ShopView
+  },
+  {
+    path: '/admin',
+    name: 'admin',
+    component: AdminView
   }
 ]
 
